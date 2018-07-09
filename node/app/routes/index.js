@@ -4,7 +4,7 @@ var model = require('../models/index');
  
 /* GET todo listing. */
 router.get('/', function(req, res, next) {
-    res.send('working index');
+    res.send('working index!!');
 });
  
  

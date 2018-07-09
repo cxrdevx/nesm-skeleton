@@ -19,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /** declaracion rutas */
 app.use('/todos', todosRouter);
+app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
