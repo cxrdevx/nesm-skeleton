@@ -1,22 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var model = require('../models/index');
+
+var todosController = require('../controllers/todos')
  
 /* GET todo listing. */
-router.get('/', function(req, res, next) {
-    model.Todo.findAll({})
-    .then(todos => res.json({
-        error: false,
-        data: todos
-    }))
-    .catch(error => res.json({
-        error: true,
-        data: [],
-        error: error
-    }));
-});
- 
- 
+router.get('/', todosController.getTodos);
+router.get('/:id', todosController.getTodo);
 /* POST todo. */
 router.post('/', function(req, res, next) {
     const {
