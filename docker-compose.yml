@@ -2,13 +2,13 @@ version: '3'
 services:
   mysql:
     image: mysql:5.6
-    container_name: mysql-weeder
+    container_name: mysql-nesm
     environment:
-      MYSQL_ROOT_PASSWORD: weeder
-      MYSQL_DATABASE: bd_weeder
-      MYSQL_ROOT_PASSWORD: root_weeder
-      MYSQL_USER: weeder_user
-      MYSQL_PASSWORD: weeder_pass
+      MYSQL_ROOT_PASSWORD: nesm
+      MYSQL_DATABASE: bd_nesm
+      MYSQL_ROOT_PASSWORD: root_nesm
+      MYSQL_USER: nesm_user
+      MYSQL_PASSWORD: nesm_pass
     command: mysqld --user=root --verbose
     volumes:
       - ./mysql/script:/docker-entrypoint-initdb.d/
@@ -19,12 +19,12 @@ services:
       - 3306:3306
   web:
     build: node/
+    volumes:
+      - ./node/app/:/usr/src/app
     ports:
-      - "8080:80"
+      - "8080:3000"
     links:
       - mysql
-volumes:
-  node:
   
 
 

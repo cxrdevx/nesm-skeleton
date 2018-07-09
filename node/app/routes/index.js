@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
-
-/* GET home page. */
+var model = require('../models/index');
+ 
+/* GET todo listing. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+    res.send('working index');
 });
-
+ 
+ 
 module.exports = router;

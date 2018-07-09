@@ -1,0 +1,9 @@
+POST http://localhost:8080/todos HTTP/1.1
+content-type: application/json
+
+{
+    "title": "sample",
+    "description": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
+###
+GET http://localhost:8080/todos HTTP/1.1

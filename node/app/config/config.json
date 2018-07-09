@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "weeder_user",
-    "password": "weeder_pass",
-    "database": "bd_weeder",
+    "username": "nesm_user",
+    "password": "nesm_pass",
+    "database": "bd_nesm",
     "host": "mysql",
     "dialect": "mysql"
   },
