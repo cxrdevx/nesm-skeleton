@@ -51,12 +51,12 @@ class TodosController {
             if (!todo) {
                 throw new Error("Todo buscado no existe")
             }
-            var updateTodo = await model.Todo.update(
-                { title: req.body.title,
-                    description: req.body.description}
-                ,{returning: true, where: {id: req.params.id}
-            });
-            res.status(200).send(updateTodo);
+            todo.update(
+                { title: req.body.title, description: req.body.description},
+                { returning: true, where: {id: req.params.id} }
+            ).then(function () {
+                res.status(200).send();
+            });    
         } catch(ex){
             res.status(500).send({ message: ex.toString() });
         }
